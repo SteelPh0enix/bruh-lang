@@ -1,5 +1,39 @@
+#include <algorithm>
+#include <argparser.hpp>
+#include <fstream>
 #include <iostream>
+#include <iterator>
+#include <string>
+#include <tokenizer.hpp>
+#include <vector>
 
-int main() {
-  std::cout << "Hello there\n";
+std::vector<char> load_file(std::string const& path) {
+  auto file_contents = std::vector<char>{};
+  auto file_stream = std::fstream(path, std::ios::in);
+
+  auto file_start = std::istreambuf_iterator<char>(file_stream);
+  auto file_end = std::istreambuf_iterator<char>{};
+  auto vector_inserter = std::back_inserter(file_contents);
+
+  std::copy(file_start, file_end, vector_inserter);
+
+  return file_contents;
+}
+
+void run_from_file(std::string const& path) {
+
+}
+
+void interpret() {
+
+}
+
+int main(int argc, char** argv) {
+  auto arguments = Argparser(argc, argv);
+
+  if (arguments.count() > 0) {
+    run_from_file(arguments.get<std::string>(0));
+  } else {
+    interpret();
+  }
 }
