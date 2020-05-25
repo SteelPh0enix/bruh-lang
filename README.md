@@ -152,7 +152,7 @@ nothing new here, plain old `while`
 ```
 do {
   do things
-} while(condition)
+} while condition;
 ```
 
 same as above but with at least one iteration
