@@ -21,10 +21,10 @@ OBJECTS = $(SOURCES:.cpp=.o)
 .PHONY: clean
 
 all:	$(OUTPUT_EXEC)
-			@echo Compilation completed
+	@echo Compilation completed
 
 $(OUTPUT_EXEC): $(OBJECTS)
-			$(CXX) $(CXXFLAGS) -std=$(CXXSTANDARD) $(CXXOPTIMALIZATION) $(INCLUDES) $(LFLAGS) $(LIBS) $(OBJECTS) -o $(OUTPUT_EXEC)
+	$(CXX) $(CXXFLAGS) -std=$(CXXSTANDARD) $(CXXOPTIMALIZATION) $(INCLUDES) $(LFLAGS) $(LIBS) $(OBJECTS) -o $(OUTPUT_EXEC)
 
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -std=$(CXXSTANDARD) $(CXXOPTIMALIZATION) $(INCLUDES) -c $< -o $@
