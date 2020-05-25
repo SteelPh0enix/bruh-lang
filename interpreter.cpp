@@ -20,18 +20,22 @@ std::vector<char> load_file(std::string const& path) {
   return file_contents;
 }
 
-void run_from_file(std::string const& path) {
-
-}
+void run_from_file(std::string const& path) {}
 
 void interpret() {
-
+  std::string command{};
+  while (std::getline(std::cin, command)) {
+  }
 }
 
 int main(int argc, char** argv) {
   auto arguments = Argparser(argc, argv);
 
-  if (arguments.count() > 0) {
+  if (arguments.count() > 1) {
+    std::cerr << "Usage:\n"
+              << '\t' << arguments.get_exec_name() << " - runs in interpreter mode\n"
+              << '\t' << arguments.get_exec_name() << " [filename] - runs code from file\n";
+  } else if (arguments.count() == 1) {
     run_from_file(arguments.get<std::string>(0));
   } else {
     interpret();
