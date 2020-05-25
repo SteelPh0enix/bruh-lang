@@ -30,8 +30,6 @@ void interpret() {
 
 int main(int argc, char** argv) {
   auto arguments = Argparser(argc, argv);
-  std::cout << "test\n";
-  std::cout << "jp2gmd'\n";
 
   if (arguments.count() > 0) {
     run_from_file(arguments.get<std::string>(0));
