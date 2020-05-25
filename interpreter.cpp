@@ -22,8 +22,12 @@ std::vector<char> load_file(std::string const& path) {
   return file_contents;
 }
 
-void run() {
+void run(std::string const& code) {
+  auto token_list = BruhLang::Tokenizer::tokenize(code);
 
+  for (auto const& token : token_list) {
+    std::cout << token << '\n';
+  }
 }
 
 void run_from_file(std::string const& path) {}
@@ -32,6 +36,7 @@ void interpret() {
   std::string command{};
   std::cout << INTERPRETER_PROMPT;
   while (std::getline(std::cin, command)) {
+    run(command);
     std::cout << INTERPRETER_PROMPT;
   }
 }
