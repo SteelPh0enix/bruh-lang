@@ -7,6 +7,8 @@
 #include <tokenizer.hpp>
 #include <vector>
 
+constexpr char const* const INTERPRETER_PROMPT = "bruh> ";
+
 std::vector<char> load_file(std::string const& path) {
   auto file_contents = std::vector<char>{};
   auto file_stream = std::fstream(path, std::ios::in);
@@ -20,11 +22,15 @@ std::vector<char> load_file(std::string const& path) {
   return file_contents;
 }
 
+void run()
+
 void run_from_file(std::string const& path) {}
 
 void interpret() {
   std::string command{};
+  std::cout << INTERPRETER_PROMPT;
   while (std::getline(std::cin, command)) {
+    std::cout << INTERPRETER_PROMPT;
   }
 }
 
