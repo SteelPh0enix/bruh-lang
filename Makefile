@@ -17,7 +17,6 @@ OBJECTS = $(SOURCES:.cpp=.o)
 .PHONY: clean
 
 all:	$(OUTPUT_EXEC)
-			@echo File list: $(OBJECTS)
 			@echo Compilation completed
 
 $(OUTPUT_EXEC): $(OBJECTS)
