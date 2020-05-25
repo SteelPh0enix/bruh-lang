@@ -4,7 +4,7 @@ bruh-lang, my own programming language - because everyone needs to make one, onc
 ## Description
 
 bruh-lang will be
-* Statically-typed: everything should have fixed size and be checked by interpreter/compiler
+* Statically-typed: everything should have one, proper type, and possibly be checked by interpreter/compiled.
 * Mixed-paradigm: functional and object-oriented, similar to C++ and Rust
 * Memory-aware: i don't know if something like that even exist, but the point is that it will manage the memory allocation by itself on pre-allocated memory blocks. We'll see.
 * Transpilled: to C i suppose. I dunno, i'll see. I need to make interpreter first and see if this will work out as i expect.
@@ -73,7 +73,7 @@ Some types i want to have:
 * `float` - floating-point number. The 32-bit one. The small one.
 * `double` - another floating-point number. The 64-bit one. The good one. Prefer it, unless you need his little brother.
 
-All 4 of these are also available as unsigned versions, with `u` prefix: `uint`, `ubigint`, `usmallint`, `ubyte`
+First 4 of these are also available as unsigned versions, with `u` prefix: `uint`, `ubigint`, `usmallint`, `ubyte`
 
 We also have
 

@@ -22,7 +22,9 @@ std::vector<char> load_file(std::string const& path) {
   return file_contents;
 }
 
-void run()
+void run() {
+
+}
 
 void run_from_file(std::string const& path) {}
 
